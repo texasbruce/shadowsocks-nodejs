@@ -5,10 +5,11 @@ shadowsocks-nodejs
 
 shadowsocks-nodejs is a node.js port of [shadowsocks].
 
-WIP
+**WIP**
 1. Convert to TypeScript
 2. Add support for new nodejs
 3. Fix any issues from upstream shadowsocks/shadowsocks-nodejs
+4. Remove dependency on CoffeeScript
 
 [Build Status]:    https://img.shields.io/travis/clowwindy/shadowsocks-nodejs/master.svg?style=flat
 [NPM]:             https://www.npmjs.com/package/shadowsocks
