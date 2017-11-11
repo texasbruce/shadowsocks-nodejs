@@ -1,15 +1,19 @@
 {
     "name": "shadowsocks",
     "description": "a tunnel proxy that help you get through firewalls",
-    "keywords": ["shadowsocks", "proxy", "socks5"],
+    "keywords": [
+        "shadowsocks",
+        "proxy",
+        "socks5"
+    ],
     "author": "clowwindy",
-    "version": "1.5.3",
-    "licenses": [{
-        "type": "MIT",
-        "url": "https://raw.github.com/clowwindy/shadowsocks-nodejs/master/LICENSE"
-    }],
+    "contributors": [
+        "texasbruce"
+    ],
+    "version": "1.5.4",
+    "license": "SEE LICENSE IN LICENSE",
     "engines": {
-        "node": ">=0.10.0"
+        "node": ">=6.0.0"
     },
     "directories": {
         "lib": "./lib/shadowsocks"
@@ -20,15 +24,14 @@
         "ssserver": "./bin/ssserver"
     },
     "scripts": {
-        "test": "cake test"
+        "test": "node lib/shadowsocks/test.js",
+        "compile": "echo TODO: tsc"
     },
-    "homepage": "https://github.com/clowwindy/shadowsocks-nodejs",
-    "bugs": "https://github.com/clowwindy/shadowsocks-nodejs/issues",
+    "homepage": "https://github.com/texasbruce/shadowsocks-nodejs",
+    "bugs": "https://github.com/texasbruce/shadowsocks-nodejs/issues",
     "repository": {
         "type": "git",
-        "url": "https://github.com/clowwindy/shadowsocks-nodejs.git"
+        "url": "https://github.com/texasbruce/shadowsocks-nodejs.git"
     },
-    "devDependencies": {
-        "coffee-script": ">=1.6.2"
-    }
+    "devDependencies": {}
 }
