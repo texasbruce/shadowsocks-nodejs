@@ -22,37 +22,39 @@
   SOFTWARE.
  */
 
-(function() {
-  var merge, merge_sort;
+// TODO Specify types
 
-  merge = function(left, right, comparison) {
-    var result;
-    result = new Array();
-    while ((left.length > 0) && (right.length > 0)) {
-      if (comparison(left[0], right[0]) <= 0) {
-        result.push(left.shift());
-      } else {
-        result.push(right.shift());
-      }
-    }
-    while (left.length > 0) {
+let _merge: (left, right, comparsion) => any;
+let _mergeSort: (array, comparison) => any;
+
+_merge = (left, right, comparison) => {
+  let result;
+  result = new Array();
+  while ((left.length > 0) && (right.length > 0)) {
+    if (comparison(left[0], right[0]) <= 0) {
       result.push(left.shift());
-    }
-    while (right.length > 0) {
+    } else {
       result.push(right.shift());
     }
-    return result;
-  };
+  }
+  while (left.length > 0) {
+    result.push(left.shift());
+  }
+  while (right.length > 0) {
+    result.push(right.shift());
+  }
+  return result;
+};
 
-  merge_sort = function(array, comparison) {
-    var middle;
-    if (array.length < 2) {
-      return array;
-    }
-    middle = Math.ceil(array.length / 2);
-    return merge(merge_sort(array.slice(0, middle), comparison), merge_sort(array.slice(middle), comparison), comparison);
-  };
+_mergeSort = (array, comparison) => {
+  let middle;
+  if (array.length < 2) {
+    return array;
+  }
+  middle = Math.ceil(array.length / 2);
+  return _merge(_mergeSort(array.slice(0, middle), comparison), 
+    _mergeSort(array.slice(middle), comparison), comparison);
+};
 
-  exports.merge_sort = merge_sort;
 
-}).call(this);
+export let mergeSort: (array, comparison) => any = _mergeSort;
