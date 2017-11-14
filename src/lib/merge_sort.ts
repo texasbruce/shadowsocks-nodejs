@@ -24,14 +24,14 @@
 
 // TODO Specify types
 
-let _merge: (left, right, comparsion) => any;
-let _mergeSort: (array, comparison) => any;
+let _merge: (left, right, comparator) => any;
+let _mergeSort: (array, comparator) => any;
 
-_merge = (left, right, comparison) => {
+_merge = (left, right, comparator) => {
   let result;
   result = new Array();
   while ((left.length > 0) && (right.length > 0)) {
-    if (comparison(left[0], right[0]) <= 0) {
+    if (comparator(left[0], right[0]) <= 0) {
       result.push(left.shift());
     } else {
       result.push(right.shift());
@@ -46,15 +46,15 @@ _merge = (left, right, comparison) => {
   return result;
 };
 
-_mergeSort = (array, comparison) => {
+_mergeSort = (array, comparator) => {
   let middle;
   if (array.length < 2) {
     return array;
   }
   middle = Math.ceil(array.length / 2);
-  return _merge(_mergeSort(array.slice(0, middle), comparison), 
-    _mergeSort(array.slice(middle), comparison), comparison);
+  return _merge(_mergeSort(array.slice(0, middle), comparator), 
+    _mergeSort(array.slice(middle), comparator), comparator);
 };
 
 
-export let mergeSort: (array, comparison) => any = _mergeSort;
+export let mergeSort: (array, comparator) => any = _mergeSort;
