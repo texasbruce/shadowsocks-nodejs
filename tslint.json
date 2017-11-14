@@ -1,9 +1,21 @@
 {
-    "defaultSeverity": "error",
+    "defaultSeverity": "warn",
     "extends": [
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "no-consecutive-blank-lines": false,
+        "ordered-imports": false,
+        "no-trailing-whitespace": false,
+        "align": false,
+        "variable-name": false,
+        "whitespace": false,
+        "max-line-length": false,
+        "one-variable-per-declaration": false,
+        "one-line": false,
+        "space-before-function-paren": false,
+        "member-ordering": false
+    },
     "rulesDirectory": []
 }
