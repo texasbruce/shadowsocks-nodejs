@@ -34,7 +34,11 @@
         "url": "https://github.com/texasbruce/shadowsocks-nodejs.git"
     },
     "devDependencies": {
-        "typescript" : ">=2.1.0",
-        "tslint": ">=5.8.0"
+        "@types/node": "^8.0.51",
+        "@types/locutus": "0.0.5",
+        "typescript": ">=2.1.0"
+    },
+    "dependencies": {
+        "locutus": "^2.0.9"
     }
 }
