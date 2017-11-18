@@ -269,4 +269,3 @@ function decrypt(enc: Encryptor, buf: Buffer): Buffer {
 
 
 export {Encryptor, encryptAll, getTable};
-export default Encryptor;
