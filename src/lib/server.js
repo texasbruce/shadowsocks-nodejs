@@ -22,22 +22,15 @@
   SOFTWARE.
  */
 
+import inet from "locutus/php/network";
+import net from "net";
+import fs from "fs";
+import path from "path";
+import udpReplay from "./udprelay";
+import utils from "./utils";
+import {Encryptor} from "./encrypt";
+
 (function() {
-  var Encryptor, fs, inet, net, path, udpRelay, utils;
-
-  net = require("net");
-
-  fs = require("fs");
-
-  path = require("path");
-
-  udpRelay = require("./udprelay");
-
-  utils = require("./utils");
-
-  inet = require("./inet");
-
-  Encryptor = require("./encrypt").Encryptor;
 
   exports.main = function() {
     var METHOD, SERVER, a_server_ip, config, configContent, configFromArgs, configPath, connections, e, k, key, port, portPassword, servers, timeout, v, _results;
@@ -117,7 +110,7 @@
             server = net.createServer(function(connection) {
               var addrLen, cachedPieces, clean, encryptor, headerLength, remote, remoteAddr, remotePort, stage;
               connections += 1;
-              encryptor = new Encryptor(KEY, METHOD);
+              encryptor = Encryptor(KEY, METHOD);
               stage = 0;
               headerLength = 0;
               remote = null;
