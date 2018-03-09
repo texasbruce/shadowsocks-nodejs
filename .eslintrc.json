@@ -1,3 +1,12 @@
 {
-    "extends": "standard"
+    "extends": "standard",
+    "rules" : {
+        "semi" : "off",
+        "quotes" : "off",
+        "no-multiple-empty-lines" : "off",
+        "space-before-function-paren" : "off",
+        "no-trailing-spaces" : "off",
+        "camelcase" : "off",
+        "no-array-constructor" : "off"
+    }
 }
