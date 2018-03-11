@@ -6,9 +6,9 @@
         "proxy",
         "socks5"
     ],
-    "author": "clowwindy",
+    "author": "texasbruce",
     "contributors": [
-        "texasbruce"
+        "clowwindy", "texasbruce"
     ],
     "version": "1.5.4",
     "license": "SEE LICENSE IN LICENSE",
